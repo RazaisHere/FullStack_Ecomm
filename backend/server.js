@@ -20,7 +20,9 @@ connectCloudinary();
 // Middlewares
 app.use(express.json());
 app.use(cors());
-
+app.get("/",async(req,res)=>{
+    res.send("API WORKING")
+})
 // Connecting DB
 connectDB();
 
