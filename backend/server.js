@@ -20,10 +20,10 @@ connectCloudinary();
 // Middlewares
 app.use(express.json());
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://full-stack-admin-pied.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
+ origin:["https://full-stack-admin-pied.vercel.app"],
+  method:["POST","GET"],
+credentials:true
+ 
 });
 
 app.get("/",async(req,res)=>{
