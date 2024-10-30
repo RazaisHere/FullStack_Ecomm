@@ -20,7 +20,7 @@ connectCloudinary()
 app.use(express.json());
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ["http://192.168.18.16:3000", "http://192.168.18.16:5173"];
+        const allowedOrigins = ["https://vercel.com/api/toolbar/link/full-stack-frontend-nine.vercel.app?via=project-dashboard-alias-list&p=1&page=/", "https://vercel.com/api/toolbar/link/full-stack-admin-pied.vercel.app?via=project-dashboard-alias-list&p=1&page=/"];
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, origin);
         } else {
