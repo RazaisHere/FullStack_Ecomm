@@ -14,7 +14,7 @@ function User() {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('https://full-stack-backend-theta.vercel.app/admin/users/', {
+      const response = await axios.get(`${backendUrl}/admin/users/`, {
         headers: {
           "Authorization": `Bearer ${token}`,
         }
