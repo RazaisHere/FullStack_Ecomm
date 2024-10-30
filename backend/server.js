@@ -12,7 +12,7 @@ const orderRouter = require("./router/orderRouter");
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 5000; // Corrected port assignment
+const port = process.env.PORT || 5000;
 
 // Config Cloudinary
 connectCloudinary();
@@ -21,22 +21,22 @@ connectCloudinary();
 app.use(express.json());
 
 app.use(cors({
-     origin: ["https://full-stack-admin-pied.vercel.app/"],
+    origin: "https://full-stack-admin-pied.vercel.app", // Removed trailing slash
     methods: ["POST", "GET"],
     credentials: true,
 }));
 
+app.get("/", async (req, res) => {
+    res.send("API WORKING");
+});
 
-app.get("/",async(req,res)=>{
-    res.send("API WORKING")
-})
 // Connecting DB
 connectDB();
 
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/cart", cartRouter);
-app.use("/admin/", adminRouter);
+app.use("/admin", adminRouter);  // Removed trailing slash in route paths
 app.use("/admin/products", productRouter);
 app.use("/admin/users", adminUserRouter);
 app.use("/api/order", orderRouter);
