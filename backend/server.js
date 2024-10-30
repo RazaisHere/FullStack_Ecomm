@@ -19,7 +19,13 @@ connectCloudinary();
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://full-stack-admin-pied.vercel.app/"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 app.get("/",async(req,res)=>{
     res.send("API WORKING")
 })
