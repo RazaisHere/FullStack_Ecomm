@@ -9,7 +9,7 @@ export default function Login({ setToken }) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await axios.post(`${backendUrl}/admin/login`, { adminEmail, adminPassword });
+            const response = await axios.post('https://full-stack-backend-theta.vercel.app/admin/login', { adminEmail, adminPassword });
 
             console.log(response.data); // Check the response from the backend
 
