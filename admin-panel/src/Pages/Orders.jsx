@@ -11,7 +11,7 @@ function Orders({ token }) {
       return null;
     }
     try {
-      const response = await axios.get('https://full-stack-backend-theta.vercel.app/api/order/list', {
+      const response = await axios.get(`${backendUrl}/api/order/list`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }
@@ -26,7 +26,7 @@ function Orders({ token }) {
 
   const statusHandler=async(e,orderId)=>{
     try {
-      const response = await axios.post('https://full-stack-backend-theta.vercel.app/api/order/status',{orderId,status:event.target.value}, {headers: {
+      const response = await axios.post(`${backendUrl}/api/order/status`,{orderId,status:event.target.value}, {headers: {
         "Authorization": `Bearer ${token}`
       }})
       if(response.data.success){
