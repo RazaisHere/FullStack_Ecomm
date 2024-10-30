@@ -21,7 +21,7 @@ connectCloudinary();
 app.use(express.json());
 
 app.use(cors({
-    origin: "https://full-stack-admin-pied.vercel.app", // Removed trailing slash
+    origin: "https://full-stack-admin-pied.vercel.app", 
     methods: ["POST", "GET"],
     credentials: true,
 }));
@@ -36,7 +36,7 @@ connectDB();
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/cart", cartRouter);
-app.use("/admin", adminRouter);  // Removed trailing slash in route paths
+app.use("/admin", adminRouter);  
 app.use("/admin/products", productRouter);
 app.use("/admin/users", adminUserRouter);
 app.use("/api/order", orderRouter);
