@@ -11,7 +11,7 @@ function List() {
     //   console.log("Token from localStorage:", token); 
   
       try {
-          const response = await axios.get('https://full-stack-backend-theta.vercel.app/admin/products/list', {
+          const response = await axios.get(`${backendUrl}/admin/products/list`, {
               headers: {
                 "Authorization": `Bearer ${token}`
               }
@@ -30,7 +30,7 @@ function List() {
 
   const removeProduct = async (id) => {
     try {
-        const response = await axios.post('https://full-stack-backend-theta.vercel.app/admin/products/remove', { id }, {
+        const response = await axios.post(`${backendUrl}/admin/products/remove`, { id }, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
