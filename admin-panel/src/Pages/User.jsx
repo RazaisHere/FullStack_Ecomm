@@ -14,7 +14,7 @@ function User() {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${backendUrl}/admin/users/`, {
+      const response = await axios.get('https://full-stack-backend-theta.vercel.app/admin/users/', {
         headers: {
           "Authorization": `Bearer ${token}`,
         }
@@ -32,7 +32,7 @@ function User() {
 
   const removeUser = async (id) => {
     try {
-      const response = await axios.post(`${backendUrl}/admin/users/remove`, { id }, {
+      const response = await axios.post('https://full-stack-backend-theta.vercel.app/admin/users/remove', { id }, {
         headers: {
           "Authorization": `Bearer ${token}`,
         }
@@ -52,7 +52,7 @@ function User() {
   const addUser = async (e) => {
     e.preventDefault();  // Prevent form submission default behavior
     try {
-      const response = await axios.post(`${backendUrl}/admin/users/adduser`, {
+      const response = await axios.post('https://full-stack-backend-theta.vercel.app/admin/users/adduser', {
         firstname,
         lastname,
         email,
