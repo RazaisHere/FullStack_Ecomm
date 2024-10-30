@@ -19,12 +19,12 @@ connectCloudinary();
 
 // Middlewares
 app.use(express.json());
-const corsOptions = {
-    origin: ["https://full-stack-admin-pied.vercel.app/"],
+
+app.use(cors({
+     origin: ["https://full-stack-admin-pied.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
-};
-app.use(cors(corsOptions));
+}));
 
 
 app.get("/",async(req,res)=>{
