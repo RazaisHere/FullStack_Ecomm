@@ -19,7 +19,20 @@ connectCloudinary();
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: (origin, callback) => {
+        const allowedOrigins = [
+            "https://full-stack-frontendretry.vercel.app/",
+            "https://full-stack-admin-pied.vercel.app"
+        ];
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, origin);
+        } else {
+            callback(new Error('CORS policy: No access'));
+        }
+    },
+    credentials: true
+}));
 app.get("/",async(req,res)=>{
     res.send("API WORKING")
 })
