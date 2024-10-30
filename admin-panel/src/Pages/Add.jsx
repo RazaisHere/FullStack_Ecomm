@@ -37,7 +37,7 @@ function Add() {
       image2 && formData.append("image2", image2);
       image3 && formData.append("image3", image3);
   
-      const response = await axios.post('https://full-stack-backend-theta.vercel.app/admin/products/add', formData, {
+      const response = await axios.post(`${backendUrl}/admin/products/add`, formData, {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "multipart/form-data"
